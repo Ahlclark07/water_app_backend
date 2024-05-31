@@ -11,6 +11,7 @@ use App\Http\Controllers\API\UserController;
 // });
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
+Route::get('/fakeConsommations', [UserController::class, 'addFakeConsommation']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [UserController::class, 'logout']);

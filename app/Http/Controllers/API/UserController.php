@@ -183,6 +183,24 @@ class UserController extends Controller
 
         return response()->json(['message' => 'Consommation ajoutée ou mise à jour avec succès', 'consommation' => $consommation], 200);
     }
+    public function addFakeConsommation()
+    {
+
+        for ($i = 24; $i <= 31; $i++) {
+            # code...
+
+            // Vérifier si une consommation existe déjà pour l'utilisateur et la date donnée
+            // Créer une nouvelle consommation
+            $consommation = new ConsommationJournaliere();
+            $consommation->user_id = 1;
+            $consommation->date = "2024-05-$i";
+            $consommation->consommation = random_int(10, 50);
+            $consommation->save();
+        }
+
+
+        return response()->json(['message' => 'Consommation ajoutée ou mise à jour avec succès'], 200);
+    }
     public function addAbonnement(Request $request)
     {
         $request->validate([
