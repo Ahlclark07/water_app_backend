@@ -232,7 +232,7 @@ class UserController extends Controller
             $abonnement->save();
         }
 
-        return response()->json(['message' => 'Consommation ajoutée ou mise à jour avec succès', 'abonnement' => $abonnement], 200);
+        return response()->json(['message' => 'Abonnement ajoutée ou mise à jour avec succès', 'abonnement' => $abonnement], 200);
     }
 
     public function getAbonnement(Request $request)
