@@ -270,8 +270,8 @@ class UserController extends Controller
         $user = $request->user();
         Log::info($user);
         $notifications = Notification::where('user_id', $user->id)
-            ->orderBy('date', 'asc')
-            ->take(7)
+            ->orderBy('date', 'desc')
+            ->take(20)
             ->get()
             ->map(function ($notification) {
                 return [
